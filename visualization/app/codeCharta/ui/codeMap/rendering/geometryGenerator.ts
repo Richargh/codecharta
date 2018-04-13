@@ -4,6 +4,7 @@ import {codeMapGeometricDescription} from "./codeMapGeometricDescription";
 import {codeMapBuilding} from "./codeMapBuilding";
 import {MapColors} from "./renderSettings";
 import {colorRange} from "./renderSettings";
+import {colors} from "./renderSettings";
 import {renderSettings} from "./renderSettings";
 import {renderingUtil} from "./renderingUtil";
 import {intermediateVertexData} from "./intermediateVertexData";
@@ -110,7 +111,7 @@ export class geometryGenerator {
         let measures : boxMeasures = this.mapNodeToLocalBox(n);
         measures.height = this.ensureMinHeightIfUnlessDeltaNegative(n.height, n.heightDelta);
 
-        let color : number = this.estimateColorForBuilding(n, settings.colorKey, settings.colorRange, settings.renderDeltas);
+        let color : number = this.estimateColorForBuilding(n, settings.colorKey, settings.colorRange, settings.renderDeltas, settings.availableColors);
 
         let renderDelta: number = 0.0;
 
@@ -139,7 +140,7 @@ export class geometryGenerator {
         boxGeometryGenerationHelper.addBoxToVertexData(data, measures, color, idx, renderDelta);
     }
 
-    private estimateColorForBuilding(n : node, colorKey : string, range : colorRange, deltasEnabled : boolean) : number
+    private estimateColorForBuilding(n : node, colorKey : string, range : colorRange, deltasEnabled : boolean, availableColors: colors ) : number
     {
         let color : number = MapColors.defaultC;
 
@@ -152,15 +153,15 @@ export class geometryGenerator {
             }
             else if (val < range.from)
             {
-                color = range.flipped ? MapColors.negative : MapColors.positive;
+                color = range.flipped ? availableColors.first : availableColors.third;
             }
             else if(val > range.to)
             {
-                color = range.flipped ? MapColors.positive : MapColors.negative;
+                color = range.flipped ? availableColors.third : availableColors.first;
             }
             else
             {
-                color = MapColors.neutral;
+                color = availableColors.second;
             }
 
         }

@@ -91,6 +91,7 @@ export class CodeMapRenderService implements SettingsServiceSubscriber, CodeMapM
             colorKey: s.colorMetric,
             renderDeltas: s.deltas,
             colorRange: s.neutralColorRange,
+            availableColors: s.availableColors,
             mapSize: mapSize,
             deltaColorFlipped: s.deltaColorFlipped
         };

@@ -3,6 +3,11 @@ export interface colorRange {
     to : number;
     flipped : boolean;
 }
+export interface colors {
+    first : number;
+    seconc : number;
+    third : number;
+}
 
 export enum MapColors {
     positive = 0x69AE40,
@@ -22,6 +27,7 @@ export interface renderSettings {
     colorKey : string;
     renderDeltas : boolean;
     colorRange : colorRange;
+    availableColors: colors;
     mapSize : number;
     deltaColorFlipped: boolean;
 }

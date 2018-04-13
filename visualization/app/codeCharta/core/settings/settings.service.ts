@@ -81,7 +81,7 @@ export class SettingsService implements DataServiceSubscriber, CameraChangeSubsc
             flipped: false
         };
         let cs: Colors ={
-            first: 0x69AE40,
+            first: 0x00BFFF,
             second: 0xddcc00,
             third: 0x820E0E,
         }
