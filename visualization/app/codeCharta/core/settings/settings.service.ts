@@ -14,6 +14,10 @@ export interface Range {
     from: number; to: number; flipped: boolean;
 }
 
+export interface Colors {
+    first: number; second: number; third: number;
+}
+
 export interface Scale {
     x: number;
     y: number;
@@ -24,6 +28,7 @@ export interface Settings {
 
     map: CodeMap;
     neutralColorRange: Range;
+    availableColors: Colors;
     areaMetric: string;
     heightMetric: string;
     colorMetric: string;
@@ -75,7 +80,11 @@ export class SettingsService implements DataServiceSubscriber, CameraChangeSubsc
             to: 20,
             flipped: false
         };
-
+        let cs: Colors ={
+            first: 0x69AE40,
+            second: 0xddcc00,
+            third: 0x820E0E,
+        }
         let s: Scale = {
             x: 1, y: 1, z: 1
         };
@@ -89,6 +98,7 @@ export class SettingsService implements DataServiceSubscriber, CameraChangeSubsc
         return {
             map: renderMap,
             neutralColorRange: r,
+            availableColors: cs,
             areaMetric: this.getMetricByIdOrLast(0, metrics),
             heightMetric: this.getMetricByIdOrLast(1, metrics),
             colorMetric: this.getMetricByIdOrLast(2, metrics),
@@ -272,6 +282,10 @@ export class SettingsService implements DataServiceSubscriber, CameraChangeSubsc
         this._settings.neutralColorRange.to = settings.neutralColorRange.to;
         this._settings.neutralColorRange.from = settings.neutralColorRange.from;
         this._settings.neutralColorRange.flipped = settings.neutralColorRange.flipped;
+
+        this._settings.availableColors.first = settings.availableColors.first;
+        this._settings.availableColors.second = settings.availableColors.second;
+        this._settings.availableColors.third = settings.availableColors.third;
 
         this._settings.camera.x = settings.camera.x;
         this._settings.camera.y = settings.camera.y;
