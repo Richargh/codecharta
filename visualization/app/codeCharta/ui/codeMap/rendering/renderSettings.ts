@@ -5,7 +5,7 @@ export interface colorRange {
 }
 export interface colors {
     first : number;
-    seconc : number;
+    second : number;
     third : number;
 }
 
