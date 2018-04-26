@@ -13,6 +13,11 @@ export function createDefaultScenario(map: CodeMap): Scenario {
                 to: 40,
                 flipped: false
             },
+            availableColors: {
+                first: 0x00BFFF,
+                second: 0xddcc00,
+                third: 0x820E0E,
+            },
             areaMetric: "rloc",
             heightMetric: "mcc",
             colorMetric: "mcc",

@@ -71,7 +71,7 @@ export class CodeMapRenderService implements SettingsServiceSubscriber, CodeMapM
      */
     applySettings(s: Settings) {
 
-        if (s.areaMetric && s.heightMetric && s.colorMetric && s.map && s.map.root && s.neutralColorRange && s.deltaColorFlipped != undefined) {
+        if (s.areaMetric && s.heightMetric && s.availableColors && s.colorMetric && s.map && s.map.root && s.neutralColorRange && s.deltaColorFlipped != undefined) {
             this.updateMapGeometry(s);
         }
 
