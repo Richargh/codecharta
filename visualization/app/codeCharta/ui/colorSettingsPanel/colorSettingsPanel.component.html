@@ -12,13 +12,8 @@
     </md-checkbox>
 </md-input-container>
 
-<md-slider-container class="md-block">
-    <span>color</span>
-    <md-slider flex="" min="0" max="1000000000" ng-model="$.ctrl.viewModel.availableColors.first" ng-change="$ctrl.apply()">
-    </md-slider>
-    <md-input-container>
-        <input flex="" type="number" ng-model="$.ctrl.viewModel.test" ng-change="$ctrl.apply()">
-    </md-input-container>
-</md-slider-container>
+
+<div md-color-picker="$ctrl.colorPickerOptions" ng-model="$ctrl.colorPicker" ng-change="$ctrl.apply()"></div>
+
 
 <reset-settings-button-component settings-names="deltaColorFlipped,neutralColorRange.to,neutralColorRange.flipped,neutralColorRange.from"></reset-settings-button-component>

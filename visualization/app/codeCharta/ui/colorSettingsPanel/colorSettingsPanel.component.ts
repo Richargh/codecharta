@@ -11,8 +11,10 @@ export class ColorSettingsPanelController implements SettingsServiceSubscriber{
             first: 0,
             second: 0,
             third: 0
-        },
-        test: 0;
+        }
+    };
+    public colorPicker = 0;
+    public colorPickerOptions= {
     };
 
     /* @ngInject */
@@ -31,11 +33,10 @@ export class ColorSettingsPanelController implements SettingsServiceSubscriber{
     }
 
     apply() {
-        var x = Number(this.viewModel.test);
         this.settingsService.settings.neutralColorRange.flipped = this.viewModel.flipped;
         this.settingsService.settings.deltaColorFlipped = this.viewModel.deltaColorFlipped;
-        this.settingsService.settings.availableColors.first = this.viewModel.test;
-        console.log(this.viewModel.test);
+        this.settingsService.settings.availableColors.first = this.colorPicker.toString(16);
+        console.log(this.colorPicker.toString(16));
         this.settingsService.applySettings();
     }
 
