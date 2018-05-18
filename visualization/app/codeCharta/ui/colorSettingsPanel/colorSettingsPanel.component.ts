@@ -30,13 +30,16 @@ export class ColorSettingsPanelController implements SettingsServiceSubscriber{
         this.viewModel.deltas = settings.deltas;
         this.viewModel.deltaColorFlipped = settings.deltaColorFlipped;
         this.viewModel.availableColors = settings.availableColors;
+
+
     }
 
     apply() {
         this.settingsService.settings.neutralColorRange.flipped = this.viewModel.flipped;
         this.settingsService.settings.deltaColorFlipped = this.viewModel.deltaColorFlipped;
-        this.settingsService.settings.availableColors.first = this.colorPicker.toString(16);
-        console.log(this.colorPicker.toString(16));
+        //var temp = this.colorPicker.toString().substring(1);
+        var temp = parseInt(this.colorPicker.toString().substring(1), 16);
+        this.settingsService.settings.availableColors.first = temp;
         this.settingsService.applySettings();
     }
 
