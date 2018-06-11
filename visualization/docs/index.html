@@ -1,0 +1,498 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CodeCharta</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">CodeCharta</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> CodeCharta</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 id="codecharta">CodeCharta</h1>
+				<p><a href="https://travis-ci.org/MaibornWolff/codecharta"><img src="https://travis-ci.org/MaibornWolff/codecharta.svg?branch=master" alt="Build Status"></a></p>
+				<blockquote>
+					<p>CodeCharta by <a href="https://www.maibornwolff.de">MaibornWolff</a></p>
+				</blockquote>
+				<h2 id="jump-to-section">Jump to Section</h2>
+				<ul>
+					<li><a href="#installation">Installation</a></li>
+					<li><a href="#grunt-tasks">Grunt Tasks</a></li>
+					<li><a href="#json-structure">JSON structure</a></li>
+					<li><a href="LICENSE.md">License</a></li>
+				</ul>
+				<h2 id="installation">Installation</h2>
+				<p><a href="#jump-to-section">[Back To Top]</a></p>
+				<p>change working directory <code>cd &lt;projectpath&gt;/codecharta/visualization/</code></p>
+				<h4 id="install-application-for-desktop-usage-with-npm">Install application for desktop usage with npm</h4>
+				<ul>
+					<li>install with <code>npm install codecharta-visualization -g</code></li>
+					<li>run with <code>codecharta-visualization</code></li>
+				</ul>
+				<h4 id="install-application-for-desktop-usage">Install application for desktop usage</h4>
+				<ul>
+					<li>Download or build <a href="https://github.com/MaibornWolff/codecharta/releases/latest">latest version</a> for your system. </li>
+					<li>Doubleclick the system specific Runnable. You may be required to give it executable rights. </li>
+				</ul>
+				<h4 id="install-project-for-development">Install project for development</h4>
+				<ul>
+					<li>Install node 8</li>
+					<li>Install dependencies <code>npm install</code>.</li>
+				</ul>
+				<p>Once you have installed the project, you can use all grunt tasks described in the next section.</p>
+				<h4 id="install-web-application-on-server">Install web application on server</h4>
+				<ul>
+					<li>Download or build latest web version.</li>
+					<li>Copy all files (dist/app or the downloaded directory) to a served directory which is accessible from the internet.</li>
+				</ul>
+				<h2 id="grunt-tasks">Grunt Tasks</h2>
+				<p><a href="#jump-to-section">[Back To Top]</a></p>
+				<h4 id="build">Build</h4>
+				<p><code>npm run build</code> builds the project in dist/app. This artifact is ready to be served as a web application.
+				<code>npm run doc</code> generates the esdoc documentation in dist/doc/</p>
+				<h4 id="test">Test</h4>
+				<p><code>npm run test</code> runs all unit tests on the source files in app/ and generates a coverage report in dist/coverage/.
+					<code>npm run e2e</code> runs all e2e tests on the built app in headless mode.
+				<code>npm run e2e:gui</code> runs all e2e tests on the built app in gui mode.</p>
+				<h4 id="run">Run</h4>
+				<p><code>npm run serve</code> starts a simple web server and serves the project on localhost:9000.
+				<code>npm run start</code> starts the nwjs app</p>
+				<h4 id="package">Package</h4>
+				<p><code>npm run package</code> packages the nwjs app</p>
+				<h4 id="watch">Watch</h4>
+				<p><code>npm run watch:app</code> watches the app directory and triggers a quick rebuild.
+				<code>npm run watch:unit</code> watches the unit test directory and runs tests on change.</p>
+				<h2 id="url-parameters-used-by-the-web-application">URL Parameters used by the web application</h2>
+				<p><a href="#jump-to-section">[Back To Top]</a></p>
+				<p>The web application allows the usage of query parameters in the URL to set
+					certain settings. Query params are added by appending a <code>?</code> to the url,
+					followed by a key value pair <code>key=value</code>. Additional parameters can be
+				added by appending <code>&amp;key2=value2</code>. E.g. <code>http://yourdomain.com/pathtocc/index.html?file=something.json&amp;scaling.x=2&amp;areaMetric=myMetric</code></p>
+				<ul>
+					<li>The <code>file</code> parameter is a special parameter which accepts a file location. The file must be reachable through XHR.</li>
+					<li>All other parameters are defined by the <a href="/visualization/app/codeCharta/core/settings/model/settings.js">Settings class</a>.
+						<code>areaMetric=myMetric</code> therefore sets the value of settings.areaMetric to <code>myMetric</code>. Nested properties like <code>settings.scale.x</code> can be
+					set by the query parameter <code>scaling.x=42</code></li>
+					<li>The <code>map</code> parameter is disabled since it would be too much for the URL bar of your browser.</li>
+					<li>The URL in your browser gets automatically updated when you change settings through the UI.
+					It provides a simple way to customize your links with query parameters.</li>
+				</ul>
+				<h2 id="json-structure">JSON structure</h2>
+				<p><a href="#jump-to-section">[Back To Top]</a></p>
+				<p><a href="/visualization/app/codeCharta/sample.json">Example Data</a></p>
+				<p><a href="/visualization/app/codeCharta/core/data/schema.json">JSON Schema</a></p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class="label tsd-is-external">
+						<span>Internals</span>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_codecharta_codecharta_.html">"code<wbr>Charta/code<wbr>Charta"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_codecharta_codecharta_component_.html">"code<wbr>Charta/code<wbr>Charta.component"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_testville_testville_.html">"test<wbr>Ville/test<wbr>Ville"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_testville_testville_component_.html">"test<wbr>Ville/test<wbr>Ville.component"</a>
+					</li>
+					<li class="label tsd-is-external">
+						<span>Externals</span>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_aggregate_aggregate_module_.html">"code<wbr>Charta/core/aggregate/aggregate.module"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_aggregate_aggregate_service_.html">"code<wbr>Charta/core/aggregate/aggregate.service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_core_module_.html">"code<wbr>Charta/core/core.module"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_data_data_decorator_service_.html">"code<wbr>Charta/core/data/data.decorator.service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_data_data_deltacalculator_service_.html">"code<wbr>Charta/core/data/data.delta<wbr>Calculator.service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_data_data_loading_service_.html">"code<wbr>Charta/core/data/data.loading.service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_data_data_module_.html">"code<wbr>Charta/core/data/data.module"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_data_data_service_.html">"code<wbr>Charta/core/data/data.service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_data_data_validator_service_.html">"code<wbr>Charta/core/data/data.validator.service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_data_model_codemap_.html">"code<wbr>Charta/core/data/model/<wbr>Code<wbr>Map"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_scenario_scenario_data_.html">"code<wbr>Charta/core/scenario/scenario.data"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_scenario_scenario_module_.html">"code<wbr>Charta/core/scenario/scenario.module"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_scenario_scenario_service_.html">"code<wbr>Charta/core/scenario/scenario.service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_settings_settings_module_.html">"code<wbr>Charta/core/settings/settings.module"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_settings_settings_service_.html">"code<wbr>Charta/core/settings/settings.service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_statistic_statistic_module_.html">"code<wbr>Charta/core/statistic/statistic.module"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_statistic_statistic_service_.html">"code<wbr>Charta/core/statistic/statistic.service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_tooltip_tooltip_module_.html">"code<wbr>Charta/core/tooltip/tooltip.module"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_tooltip_tooltip_service_.html">"code<wbr>Charta/core/tooltip/tooltip.service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_treemap_treemap_module_.html">"code<wbr>Charta/core/treemap/treemap.module"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_treemap_treemap_service_.html">"code<wbr>Charta/core/treemap/treemap.service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_url_url_module_.html">"code<wbr>Charta/core/url/url.module"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_core_url_url_service_.html">"code<wbr>Charta/core/url/url.service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_aggregatesettingspanel_aggregatesettingspanel_.html">"code<wbr>Charta/ui/aggregate<wbr>Settings<wbr>Panel/aggregate<wbr>Settings<wbr>Panel"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_aggregatesettingspanel_aggregatesettingspanel_component_.html">"code<wbr>Charta/ui/aggregate<wbr>Settings<wbr>Panel/aggregate<wbr>Settings<wbr>Panel.component"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_codemap_.html">"code<wbr>Charta/ui/code<wbr>Map/code<wbr>Map"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_codemap_component_.html">"code<wbr>Charta/ui/code<wbr>Map/code<wbr>Map.component"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_codemap_mouseevent_service_.html">"code<wbr>Charta/ui/code<wbr>Map/code<wbr>Map.mouse<wbr>Event.service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_codemap_render_service_.html">"code<wbr>Charta/ui/code<wbr>Map/code<wbr>Map.render.service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_rendering_arrowmanager_.html">"code<wbr>Charta/ui/code<wbr>Map/rendering/arrow<wbr>Manager"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_rendering_boxgeometrygenerationhelper_.html">"code<wbr>Charta/ui/code<wbr>Map/rendering/box<wbr>Geometry<wbr>Generation<wbr>Helper"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_rendering_codemapbuilding_.html">"code<wbr>Charta/ui/code<wbr>Map/rendering/code<wbr>Map<wbr>Building"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_rendering_codemapgeometricdescription_.html">"code<wbr>Charta/ui/code<wbr>Map/rendering/code<wbr>Map<wbr>Geometric<wbr>Description"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_rendering_codemapmesh_.html">"code<wbr>Charta/ui/code<wbr>Map/rendering/code<wbr>Map<wbr>Mesh"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_rendering_codemapshaderstrings_.html">"code<wbr>Charta/ui/code<wbr>Map/rendering/code<wbr>Map<wbr>Shader<wbr>Strings"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_rendering_geometrygenerator_.html">"code<wbr>Charta/ui/code<wbr>Map/rendering/geometry<wbr>Generator"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_rendering_intermediatevertexdata_.html">"code<wbr>Charta/ui/code<wbr>Map/rendering/intermediate<wbr>Vertex<wbr>Data"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_rendering_labelmanager_.html">"code<wbr>Charta/ui/code<wbr>Map/rendering/label<wbr>Manager"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_rendering_node_.html">"code<wbr>Charta/ui/code<wbr>Map/rendering/node"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_rendering_rendersettings_.html">"code<wbr>Charta/ui/code<wbr>Map/rendering/render<wbr>Settings"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_rendering_renderingutil_.html">"code<wbr>Charta/ui/code<wbr>Map/rendering/rendering<wbr>Util"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_threeviewer_threecameraservice_.html">"code<wbr>Charta/ui/code<wbr>Map/three<wbr>Viewer/three<wbr>Camera<wbr>Service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_threeviewer_threeorbitcontrolsservice_.html">"code<wbr>Charta/ui/code<wbr>Map/three<wbr>Viewer/three<wbr>Orbit<wbr>Controls<wbr>Service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_threeviewer_threerendererservice_.html">"code<wbr>Charta/ui/code<wbr>Map/three<wbr>Viewer/three<wbr>Renderer<wbr>Service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_threeviewer_threesceneservice_.html">"code<wbr>Charta/ui/code<wbr>Map/three<wbr>Viewer/three<wbr>Scene<wbr>Service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_threeviewer_threeupdatecycleservice_.html">"code<wbr>Charta/ui/code<wbr>Map/three<wbr>Viewer/three<wbr>Update<wbr>Cycle<wbr>Service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_threeviewer_threeviewer_.html">"code<wbr>Charta/ui/code<wbr>Map/three<wbr>Viewer/three<wbr>Viewer"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_codemap_threeviewer_threeviewerservice_.html">"code<wbr>Charta/ui/code<wbr>Map/three<wbr>Viewer/three<wbr>Viewer<wbr>Service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_colorsettingspanel_colorsettingspanel_.html">"code<wbr>Charta/ui/color<wbr>Settings<wbr>Panel/color<wbr>Settings<wbr>Panel"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_colorsettingspanel_colorsettingspanel_component_.html">"code<wbr>Charta/ui/color<wbr>Settings<wbr>Panel/color<wbr>Settings<wbr>Panel.component"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_detailpanel_detailpanel_.html">"code<wbr>Charta/ui/detail<wbr>Panel/detail<wbr>Panel"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_detailpanel_detailpanelcomponent_.html">"code<wbr>Charta/ui/detail<wbr>Panel/detail<wbr>Panel<wbr>Component"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_dialog_dialog_.html">"code<wbr>Charta/ui/dialog/dialog"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_dialog_dialog_service_.html">"code<wbr>Charta/ui/dialog/dialog.service"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_dialog_queryparam_dialog_.html">"code<wbr>Charta/ui/dialog/query<wbr>Param.dialog"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_displaysettingspanel_displaysettingspanel_.html">"code<wbr>Charta/ui/display<wbr>Settings<wbr>Panel/display<wbr>Settings<wbr>Panel"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_displaysettingspanel_displaysettingspanel_component_.html">"code<wbr>Charta/ui/display<wbr>Settings<wbr>Panel/display<wbr>Settings<wbr>Panel.component"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_experimentalsettingspanel_experimentalsettingspanel_.html">"code<wbr>Charta/ui/experimental<wbr>Settings<wbr>Panel/experimental<wbr>Settings<wbr>Panel"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_experimentalsettingspanel_experimentalsettingspanel_component_.html">"code<wbr>Charta/ui/experimental<wbr>Settings<wbr>Panel/experimental<wbr>Settings<wbr>Panel.component"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_filechooser_filechooser_.html">"code<wbr>Charta/ui/file<wbr>Chooser/file<wbr>Chooser"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_filechooser_filechoosercontroller_.html">"code<wbr>Charta/ui/file<wbr>Chooser/file<wbr>Chooser<wbr>Controller"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_filechooser_filechooserdirective_.html">"code<wbr>Charta/ui/file<wbr>Chooser/file<wbr>Chooser<wbr>Directive"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_layoutswitcher_layoutswitcher_.html">"code<wbr>Charta/ui/layout<wbr>Switcher/layout<wbr>Switcher"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_layoutswitcher_layoutswitcher_component_.html">"code<wbr>Charta/ui/layout<wbr>Switcher/layout<wbr>Switcher.component"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_legendpanel_legendpanel_.html">"code<wbr>Charta/ui/legend<wbr>Panel/legend<wbr>Panel"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_legendpanel_legendpanelcomponent_.html">"code<wbr>Charta/ui/legend<wbr>Panel/legend<wbr>Panel<wbr>Component"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_maptreeview_maptreeview_.html">"code<wbr>Charta/ui/map<wbr>Tree<wbr>View/map<wbr>Tree<wbr>View"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_maptreeview_maptreeviewcomponent_.html">"code<wbr>Charta/ui/map<wbr>Tree<wbr>View/map<wbr>Tree<wbr>View<wbr>Component"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_maptreeview_maptreeviewlevelcomponent_.html">"code<wbr>Charta/ui/map<wbr>Tree<wbr>View/map<wbr>Tree<wbr>View<wbr>Level<wbr>Component"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_metricchooser_metricchooser_.html">"code<wbr>Charta/ui/metric<wbr>Chooser/metric<wbr>Chooser"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_metricchooser_metricchooser_component_.html">"code<wbr>Charta/ui/metric<wbr>Chooser/metric<wbr>Chooser.component"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_rangeslider_rangeslider_.html">"code<wbr>Charta/ui/range<wbr>Slider/range<wbr>Slider"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_rangeslider_rangeslider_component_.html">"code<wbr>Charta/ui/range<wbr>Slider/range<wbr>Slider.component"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_regexfilter_regexfilter_.html">"code<wbr>Charta/ui/regex<wbr>Filter/regex<wbr>Filter"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_regexfilter_regexfilter_component_.html">"code<wbr>Charta/ui/regex<wbr>Filter/regex<wbr>Filter.component"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_resetsettingsbutton_resetsettingsbutton_.html">"code<wbr>Charta/ui/reset<wbr>Settings<wbr>Button/reset<wbr>Settings<wbr>Button"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_resetsettingsbutton_resetsettingsbutton_component_.html">"code<wbr>Charta/ui/reset<wbr>Settings<wbr>Button/reset<wbr>Settings<wbr>Button.component"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_revisionchooser_revisionchooser_.html">"code<wbr>Charta/ui/revision<wbr>Chooser/revision<wbr>Chooser"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_revisionchooser_revisionchoosercomponent_.html">"code<wbr>Charta/ui/revision<wbr>Chooser/revision<wbr>Chooser<wbr>Component"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_scenariobuttons_scenariobuttons_.html">"code<wbr>Charta/ui/scenario<wbr>Buttons/scenario<wbr>Buttons"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_scenariobuttons_scenariobuttonscomponent_.html">"code<wbr>Charta/ui/scenario<wbr>Buttons/scenario<wbr>Buttons<wbr>Component"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_settingspanel_index_.html">"code<wbr>Charta/ui/settings<wbr>Panel/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_settingspanel_settingspanel_.html">"code<wbr>Charta/ui/settings<wbr>Panel/settings<wbr>Panel"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_statisticsettingspanel_statisticsettingspanel_.html">"code<wbr>Charta/ui/statistic<wbr>Settings<wbr>Panel/statistic<wbr>Settings<wbr>Panel"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_statisticsettingspanel_statisticsettingspanel_component_.html">"code<wbr>Charta/ui/statistic<wbr>Settings<wbr>Panel/statistic<wbr>Settings<wbr>Panel.component"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_codecharta_ui_ui_.html">"code<wbr>Charta/ui/ui"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
